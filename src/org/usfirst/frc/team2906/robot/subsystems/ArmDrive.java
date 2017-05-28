@@ -12,12 +12,10 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class ArmDrive extends PIDSubsystem {
 
-    // Initialize your subsystem here
 	private final Spark motor;
 	private final Encoder enc;
 	private String name;
 
-	// Initialize your subsystem here
 	public ArmDrive(int motorPort, String name) {
 		super(name, 10.0, 0.0, 10.0);
 		this.name = name;
