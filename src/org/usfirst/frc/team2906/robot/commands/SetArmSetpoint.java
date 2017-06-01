@@ -8,32 +8,27 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 public class SetArmSetpoint extends Command {
-	
-	double m_setpoint;
-
-    public SetArmSetpoint(double setpoint) {
-    	m_setpoint = setpoint;
         requires(Robot.armDrive);
-        requires(Robot.armDrive);
-    }
+	private double setpoint;
 
-    protected void initialize() {
-    	Robot.armDrive.enable();
-    	Robot.armDrive.setSetpoint(m_setpoint);
-    }
+	public SetArmSetpoint(double setpoint) {
+		this.setpoint = setpoint;
+		requires(Robot.armDrive);
+	}
 
-    protected void execute() {
-    }
+	// Called just before this Command runs the first time
+	@Override
+	protected void initialize() {
+		Robot.armDrive.enable();
+		Robot.armDrive.setSetpoint(setpoint);
+	}
 
-    protected boolean isFinished() {
-        return Robot.armDrive.onTarget();
-    }
-
-    protected void end() {
-    }
-
-    protected void interrupted() {
-    }
+	// Make this return true when this Command no longer needs to run execute()
+	@Override
+	protected boolean isFinished() {
+		return Robot.armDrive.onTarget();
+	}
 }
+
 
 
