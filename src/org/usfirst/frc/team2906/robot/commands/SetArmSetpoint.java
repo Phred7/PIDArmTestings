@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 public class SetArmSetpoint extends Command {
-        requires(Robot.armDrive);
 	private double setpoint;
 
 	public SetArmSetpoint(double setpoint) {

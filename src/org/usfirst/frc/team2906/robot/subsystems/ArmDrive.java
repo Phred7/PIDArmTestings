@@ -17,7 +17,7 @@ public class ArmDrive extends PIDSubsystem {
 	private String name;
 
 	public ArmDrive(int motorPort, String name) {
-		super(name, 10.0, 0.0, 10.0);
+		super(name, 0.0, 0.0, 0.0);
 		this.name = name;
 		motor = new Spark(motorPort);
 		enc = new Encoder(0, 1);
